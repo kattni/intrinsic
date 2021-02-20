@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Page not found · {{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+    Page does not exist at {{ SITENAME|striptags|e }} blog.
+{% endblock head_description %}
+{% block content %}
+    <div class="content">
+
+        <header class="page-header">
+            <h1>You found the void!</h1>
+        </header>
+
+
+        <div class="row">
+            <div class="row justify-content-md-center">
+                <p>There's nothing here. Except for this page.</p>
+                <p>You can try searching for something or head back to the <a href="{{ SITEURL }}">home page</a>.</p>
+                <form class="d-flex" action="{{ SITE_URL }}/search"
+                      onsubmit="return validateForm(this.elements['q'].value);">
+                    <input class="form-control rounded-pill mx-2" id="lunr_search_input" type="search"
+                           placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        {#Something here!#}
+    </script>
+
+
+{% endblock content %}

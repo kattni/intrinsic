@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All Tags · {{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+    All tags used in the {{ SITENAME|striptags|e }} site.
+{% endblock head_description %}
+
+{% block content %}
+
+    <div class="col-md-auto">
+        <div class="content">
+
+            <header class="page-header">
+                <h1><a href="{{ SITEURL }}/{{ TAGS_URL }}">All Post Tags</a></h1>
+            </header>
+
+            <div class="row">
+                <div class="row justify-content-md-center">
+                    <form class="d-flex">
+                        <input type="text" class="form-control rounded-pill mx-2" id="tag-input"
+                               placeholder="Find a tag" onkeyup="filterList()" aria-label="Search">
+                    </form>
+                    <ul class="list-of-tags">
+                        {% for tag, articles in tags|sort %}
+                            {% set num = articles|count %}
+                            <li>
+                                <a href="#{{ tag.slug }}-ref">{{ tag }}<span><sup>{{ num }}</sup></span></a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row justify-content-md-center">
+                    {% for tag, articles in tags|sort %}
+                        <h2 id="{{ tag.slug }}-ref" class="tag-name">{{ tag }}</h2>
+                        <ul class="list-articles-under-tag-name">
+                            {% for article in articles|sort(reverse = true, attribute = 'date') %}
+                                <li class="article-under-tag-name">
+                                    <a class="article-title-under-tag-name" href="{{ SITEURL }}/{{ article.url }}">
+                                        {{ article.title }}
+                                    </a>
+                                    <time datetime="{{ article.date.isoformat() }}">
+                                        {{ article.date.strftime("%A %Y %B %d %H:%M") }}
+                                    </time>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block script %}
+    <script>
+        {#tags.js here#}
+    </script>
+
+{% endblock script %}

@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "color-no-invalid-hex": true
+  },
+  "plugins": ["stylelint-scss"],
+  "extends": "stylelint-config-recommended"
+}

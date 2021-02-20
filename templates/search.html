@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Search - {{ SITENAME|striptags }}
+{% endblock title %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="content">
+            <div id="search-content">
+                <h2>Search Results <span></span></h2>
+                <ul class="list-group">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block scripts %}
+{{ super() }}
+    <script>
+    renderSearchPage($("#search-content ul"), makeSearchPageResult)
+    </script>
+{% endblock %}

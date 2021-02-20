@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ article.title|striptags|e }} {% if article.subtitle %} - {{ article.subtitle|striptags|e }} {% endif %} ·
+    {{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+    {% if article.summary %}
+        {{ article.summary|striptags|e }}
+    {% endif %}
+{% endblock head_description %}
+
+{% block content %}
+    <div class="col-md-auto">
+        <article class="content">
+            <header class="page-header">
+                <h1>
+                    <a href="{{ SITEURL }}/{{ article.url }}">
+                        {{ article.title }}
+                        {% if article.subtitle %}
+                            <small class="subtitle">
+                                {{ article.subtitle }}
+                            </small>
+                        {% endif %}
+                    </a>
+                </h1>
+            </header>
+
+            {% include 'article_infos.html' %}
+
+            <div class="article-content">
+                <br/>
+                {{ article.content }}
+
+
+                {% if article.prev_article or article.next_article %}
+                    <div class="row justify-content-md-center">
+                    <div class="col col-lg-auto">
+                        {% if article.prev_article %}
+                            <ul class="neighbors">
+                                <li class="previous-article">&laquo;
+                                    <a href="{{ SITEURL }}/{{ article.prev_article.url }}">
+                                        {{ article.prev_article.title }}
+                                    </a>
+                                </li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                    <div class="col"></div>
+                    <div class="col col-lg-auto">
+                        {% if article.next_article %}
+                            <ul class="neighbors">
+                                <li class="next-article">
+                                    <a href="{{ SITEURL }}/{{ article.next_article.url }}">
+                                        {{ article.next_article.title }}
+                                    </a>
+                                    &raquo;
+                                </li>
+                            </ul>
+                        {% endif %}
+                    </div>
+
+                {% endif %}
+                </div>
+            </div>
+        </article>
+    </div>
+{% endblock content %}
+

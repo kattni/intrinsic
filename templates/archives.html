@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All Posts · {{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+    Full archives of {{ SITENAME|striptags|e }} blog.
+{% endblock head_description %}
+
+{% block content %}
+    <div class="col-md-auto">
+        <div class="content">
+            <section>
+                <header class="page-header">
+                    <h1><a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">All Posts</a></h1>
+                </header>
+
+
+                <div>
+                    {% for article in dates %}
+                        {% set year = article.date.strftime('%Y') %}
+                        {% if loop.first %}
+                            <div class="row">
+                                <div class="col">
+                                    <h2 class="float-sm-none float-md-start float-lg-start me-md-3 px-3 px-md-0"
+                                        id="{{ year }}"><a href="#{{ year }}">{{ year }}</a></h2>
+                                    <ul class="list-group list-group-flush">
+                                        {% else %}
+                                        {% set prevyear = loop.previtem.date.strftime('%Y') %}
+                                        {% if prevyear != year %}
+                                            </ul>
+                                            </div>
+                                            </div> <!-- end of year -->
+                                            <div class="row"> <!-- next year -->
+                                            <h2 id="{{ year }}"><a href="#{{ year }}">{{ year }}</a></h2>
+                                            <ul class="list-group list-group-flush">
+                                        {% endif %}
+                        {% endif %}
+
+                    <li class="list-group-item">
+                        <a href="{{ SITEURL }}/{{ article.url }}">
+                            {{ article.title }}
+                            {% if article.subtitle %}
+                                <small class="subtitle">
+                                    {{ article.subtitle }}
+                                </small>
+                            {% endif %}
+                        </a>
+                        <time class="float-md-end float-sm-none d-flex" itemprop="dateCreated"
+                              datetime="{{ article.date.isoformat() }}">
+                            {{ article.locale_date }}
+                        </time>
+                    </li>
+                    {% if loop.last %}
+                        </ul>
+                        </div>
+                        </div> <!-- end of year -->
+                    {% endif %}
+                    {% endfor %}
+            </section>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+<div class="post-info">
+    <span>Posted</span>
+    {% if article.author and DISPLAY_AUTHOR_ON_POSTINFO %}
+        <span>by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{ article.author }}</a></span>
+    {% endif %}
+    <span>on</span>
+    <span>{{ article.date.strftime("%A %Y %B %d %H:%M") }}</span>
+    {% if DISPLAY_TAGS_ON_POSTINFO %}
+        <span>in
+            {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag.name }}</a> {% if not loop.last %} • {% endif %}
+            {% endfor %}
+            </span>
+    {% endif %}
+</div><!-- /.post-info -->
