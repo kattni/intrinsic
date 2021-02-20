@@ -30,5 +30,6 @@ $(document).ready(() => {
     } else {
       $('#tag-input').val($(this).clone().children().remove().end().text()).keyup();
     }
+    return false;
   });
 })
