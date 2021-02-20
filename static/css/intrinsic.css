@@ -161,6 +161,10 @@ h2.tag-name {
     text-decoration: none;
 }
 
+.list-of-tags li.selected a {
+    background: #d9bffa;
+}
+
 .tags-in-article li {
     float: none;
     line-height: 28px;
@@ -169,6 +173,13 @@ h2.tag-name {
 ul.list-articles-under-tag-name {
     list-style: none outside none;
     margin: 0 0 10px 25px;
+}
+
+.tags-content.filtered .tag-group.filter-match {
+    display: block;
+}
+.tags-content.filtered .tag-group:not(.filter-match) {
+    display: none;
 }
 
 /* Content */

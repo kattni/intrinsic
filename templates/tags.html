@@ -21,7 +21,7 @@
                 <div class="row justify-content-md-center">
                     <form class="d-flex">
                         <input type="text" class="form-control rounded-pill mx-2" id="tag-input"
-                               placeholder="Find a tag" onkeyup="filterList()" aria-label="Search">
+                               placeholder="Find a tag" onkeyup="" aria-label="Search">
                     </form>
                     <ul class="list-of-tags">
                         {% for tag, articles in tags|sort %}
@@ -35,22 +35,23 @@
             </div>
 
             <div class="row">
-                <div class="row justify-content-md-center">
+                <div class="row justify-content-md-center tags-content">
                     {% for tag, articles in tags|sort %}
-                        <h2 id="{{ tag.slug }}-ref" class="tag-name">{{ tag }}</h2>
-                        <ul class="list-articles-under-tag-name">
-                            {% for article in articles|sort(reverse = true, attribute = 'date') %}
-                                <li class="article-under-tag-name">
-                                    <a class="article-title-under-tag-name" href="{{ SITEURL }}/{{ article.url }}">
-                                        {{ article.title }}
-                                    </a>
-                                    <time datetime="{{ article.date.isoformat() }}">
-                                        {{ article.date.strftime("%A %Y %B %d %H:%M") }}
-                                    </time>
-                                </li>
-                            {% endfor %}
-                        </ul>
-
+                        <div class="tag-group">
+                            <h2 id="{{ tag.slug }}-ref" class="tag-name">{{ tag }}</h2>
+                            <ul class="list-articles-under-tag-name">
+                                {% for article in articles|sort(reverse = true, attribute = 'date') %}
+                                    <li class="article-under-tag-name">
+                                        <a class="article-title-under-tag-name" href="{{ SITEURL }}/{{ article.url }}">
+                                            {{ article.title }}
+                                        </a>
+                                        <time datetime="{{ article.date.isoformat() }}">
+                                            {{ article.date.strftime("%A %Y %B %d %H:%M") }}
+                                        </time>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
