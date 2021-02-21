@@ -23,7 +23,11 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}</a>
+        <a href="{{ SITEURL }}/"><img src="/images/circuit_cat_white.png" alt="" class="logo d-inline-block align-top" width="45" height="45"></a>
+        <a class="navbar-brand" href="{{ SITEURL }}/">
+            {{ SITENAME }}
+            <div class="subtitle">{{ SITESUBTITLE }}</div>
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -67,7 +71,7 @@
                 </li>
             </ul>
             <iframe src="https://github.com/sponsors/kattni/button" title="Sponsor kattni" height="35" width="116"
-                    style="border: 0;"></iframe>
+                    style="border: 0; margin-top:5px;"></iframe>
             <div class="dropdown">
                 <form class="d-flex" action="{{ SITE_URL }}/search">
                     <input name="q" class="form-control rounded-pill mx-2" id="search_input" type="search"

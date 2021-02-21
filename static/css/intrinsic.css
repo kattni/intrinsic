@@ -35,7 +35,7 @@ a {
 }
 
 a:hover {
-    color: #8f51d4;
+    color: #a04cff;
 }
 
 #search-results.dropdown-menu.show {
@@ -81,15 +81,7 @@ footer {
     justify-content: flex-end;
     margin: 15px 0 0 0;
     min-height: 40px;
-    padding: 0 3px;
-}
-
-footer {
-    margin: 3px 0;
-}
-
-footer :first-child {
-    margin: 3px 10px;
+    padding: 10px;
 }
 
 footer #footer-info {
@@ -106,13 +98,34 @@ footer a {
     color: #d4a8ff;
 }
 
+footer a:hover {
+    color: #b253ff;
+}
+
 hr {
     border-width: 3px;
 }
 
 /* Navbar */
+.navbar .logo {
+    margin: 5px;
+}
+
+.navbar .subtitle {
+    font-size: 1rem;
+    float: right;
+    padding: 0.7rem 0 0 0.8rem;
+    font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 .navbar-brand {
     font-family: "Courier New", monospace;
+    font-size: 1.7rem;
+    margin-left: 0.7rem;
+}
+
+.navbar-nav.mb-2.mb-lg-0 .active a.nav-link {
+    color: #E0E0E0;
 }
 
 .dropdown-menu > li > a:hover,
@@ -130,6 +143,8 @@ hr {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
+
+.navbar-nav
 
 /* Tags */
 h2.tag-name {
@@ -161,7 +176,7 @@ h2.tag-name {
     text-decoration: none;
 }
 
-.list-of-tags li.selected a {
+.list-of-tags .selected a {
     background: #d9bffa;
 }
 
@@ -178,8 +193,22 @@ ul.list-articles-under-tag-name {
 .tags-content.filtered .tag-group.filter-match {
     display: block;
 }
+
 .tags-content.filtered .tag-group:not(.filter-match) {
     display: none;
+}
+
+.article-title-under-tag-name {
+    font-weight: 600;
+    font-size: 1.3rem;
+    font-family: Palatino, URW Palladio L, serif;
+}
+
+.article-under-tag-name time {
+    font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: var(--mutedTextColor);
+    font-size: 0.8rem;
+    margin-left: 10px;
 }
 
 /* Content */
@@ -405,6 +434,32 @@ table.code-highlighttable tr td:first-child pre {
     background-color: #2f1e2e;
     text-align: end;
     color: darkgrey;
+}
+
+/* Archives */
+.archive-article-list .list-group-item {
+    border-bottom: 1px dotted grey;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.archive-article-list .list-group-item .archive-article-title {
+    font-weight: 600;
+    font-size: 1.3rem;
+    font-family: Palatino, URW Palladio L, serif;
+
+}
+
+.archive-article-list .list-group-item time {
+    font-weight: normal;
+    font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: var(--mutedTextColor);
+    font-size: 0.9rem;
+}
+
+.archive-article-list .list-group-item .archive-post-summary {
+    font-family: Optima, sans-serif;
 }
 
 /* Social links in footer */

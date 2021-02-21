@@ -37,21 +37,27 @@
                                             <ul class="list-group list-group-flush">
                                         {% endif %}
                         {% endif %}
-
-                    <li class="list-group-item">
-                        <a href="{{ SITEURL }}/{{ article.url }}">
-                            {{ article.title }}
-                            {% if article.subtitle %}
-                                <small class="subtitle">
-                                    {{ article.subtitle }}
-                                </small>
-                            {% endif %}
-                        </a>
-                        <time class="float-md-end float-sm-none d-flex" itemprop="dateCreated"
-                              datetime="{{ article.date.isoformat() }}">
-                            {{ article.locale_date }}
-                        </time>
-                    </li>
+                    <div class="archive-article-list">
+                        <li class="list-group-item">
+                            <div class="archive-article-title">
+                                <a href="{{ SITEURL }}/{{ article.url }}">
+                                    {{ article.title }}
+                                    {% if article.subtitle %}
+                                        <small class="subtitle">
+                                            {{ article.subtitle }}
+                                        </small>
+                                    {% endif %}
+                                </a>
+                            </div>
+                            <time class="float-md-end float-sm-none d-flex" itemprop="dateCreated"
+                                  datetime="{{ article.date.isoformat() }}">
+                                {{ article.locale_date }}
+                            </time>
+                            <div class="archive-post-summary">
+                                {{ article.summary }}
+                            </div>
+                        </li>
+                    </div>
                     {% if loop.last %}
                         </ul>
                         </div>
