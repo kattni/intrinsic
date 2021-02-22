@@ -71,22 +71,15 @@ body {
 footer {
     background-color: #29004d;
     color: #E0E0E0;
-    align-content: center;
     align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
     display: flex;
-    flex-direction: row;
-    flex-shrink: 0;
-    flex-wrap: wrap;
-    justify-content: flex-end;
     margin: 15px 0 0 0;
-    min-height: 40px;
+    min-height: 71px;
     padding: 10px;
 }
 
 footer #footer-info {
     margin-left: auto;
-    margin-right: unset;
 }
 
 footer h4 {
@@ -102,26 +95,25 @@ footer a:hover {
     color: #b253ff;
 }
 
-hr {
-    border-width: 3px;
+/* Navbar */
+.navbar { /* Fix for certain browsers. */
+    min-height: 71px;
 }
 
-/* Navbar */
 .navbar .logo {
-    margin: 5px;
+    margin: 5px 20px 5px 5px;
 }
 
 .navbar .subtitle {
     font-size: 1rem;
-    float: right;
-    padding: 0.7rem 0 0 0.8rem;
     font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: white;
+    padding-top: 5px;
 }
 
 .navbar-brand {
     font-family: "Courier New", monospace;
     font-size: 1.7rem;
-    margin-left: 0.7rem;
 }
 
 .navbar-nav.mb-2.mb-lg-0 .active a.nav-link {
@@ -143,8 +135,6 @@ hr {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
-
-.navbar-nav
 
 /* Tags */
 h2.tag-name {
@@ -266,34 +256,6 @@ ul.list-articles-under-tag-name {
 
 .article-content ul.related-posts-list {
     list-style-type: square;
-}
-
-.article-content ol {
-    font-size: inherit;
-    list-style-type: decimal;
-}
-
-.article-content li {
-    line-height: 1.7em;
-    list-style-position: outside;
-    margin: 1px 0 1px 20px;
-}
-
-.article-content dl {
-    font-size: inherit;
-    list-style-position: outside;
-    list-style-type: decimal;
-    margin: 20px 0 20px 20px;
-}
-
-.article-content dd {
-    line-height: 1.7em;
-    margin: 1px 0 1px 20px;
-    padding: 3px 0;
-}
-
-.article-content dt {
-    font-size: inherit;
 }
 
 /* Code */
