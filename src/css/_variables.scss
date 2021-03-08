@@ -1,0 +1,82 @@
+
+$dark-theme: true !default;
+
+// Light Theme (default)
+$heading-purple: #380070 !default;
+$navbar-bg-color: #29004d !default;
+$link-purple: #6a00cb !default;
+$link-hover-purple: #a04cff !default;
+$body-bg-color: #fbf7ff !default;
+$footer-bg-color: #29004d !default;
+$footer-text-color: #e0e0e0 !default;
+$footer-link-color: #d4a8ff !default;
+$footer-link-hover-color: #b253ff !default;
+$navbar-subtitle: white !default;
+$navbar-link-color: #e0e0e0 !default;
+$dropdown-link-color: white !default;
+$dropdown-bg-color: #380070 !default;
+$dropdown-bg-color-2: #5700ad !default;
+$tag-border-color: #e0e0e0 !default;
+$tag-list-bg-color: #eee !default;
+$tag-list-color: #222 !default;
+$tag-selected-color: #d9bffa !default;
+$content-bg-color: white !default;
+$post-info-color: #8956bf !default;
+$hover-dots-color: grey !default;
+$code-color: #6900bd !default;
+$code-bg-color: #f7f7f9 !default;
+$code-border-color: #e1e1e8 !default;
+$code-hilite-bg: #2f1e2e !default;
+$code-hilite-color: darkgrey !default;
+$post-list-summary-border-color: #e0e0e0 !default;
+$post-list-header-color: #bebebe !default;
+$recent-post-bg-color: white !default;
+$recent-post-link-color: #380070 !default;
+$recent-post-border-color: #e0e0e0 !default;
+$recent-content-link-color: #8956bf !default;
+$search-content-border-color: #e0e0e0 !default;
+$archive-item-dots-color: grey !default;
+
+
+@if $dark-theme {
+  // Dark theme
+
+  // Bootstrap
+  $body-color: #dee2e6;
+
+  // Intrinsic
+  $heading-purple: #380070;
+  $navbar-bg-color: #3a3f44;
+  $link-purple: #6a00cb;
+  $link-hover-purple: #a04cff;
+  $body-bg-color: #272b30;
+  $footer-bg-color: #29004d;
+  $footer-text-color: #e0e0e0;
+  $footer-link-color: #d4a8ff;
+  $footer-link-hover-color: #b253ff;
+  $navbar-subtitle: white;
+  $navbar-link-color: #e0e0e0;
+  $dropdown-link-color: white;
+  $dropdown-bg-color: #3a3f44;
+  $dropdown-bg-color-2: #5700ad;
+  $tag-border-color: #e0e0e0;
+  $tag-list-bg-color: #eee;
+  $tag-list-color: #222;
+  $tag-selected-color: #d9bffa;
+  $content-bg-color: #3a3f44;
+  $post-info-color: #8956bf;
+  $hover-dots-color: grey;
+  $code-color: #6900bd;
+  $code-bg-color: #f7f7f9;
+  $code-border-color: #e1e1e8;
+  $code-hilite-bg: #2f1e2e;
+  $code-hilite-color: darkgrey;
+  $post-list-summary-border-color: #e0e0e0;
+  $post-list-header-color: #bebebe;
+  $recent-post-bg-color: white;
+  $recent-post-link-color: #380070;
+  $recent-post-border-color: #e0e0e0;
+  $recent-content-link-color: #8956bf;
+  $search-content-border-color: #e0e0e0;
+  $archive-item-dots-color: grey;
+}
