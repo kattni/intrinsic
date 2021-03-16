@@ -23,8 +23,6 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a href="{{ SITEURL }}/"><img src="/images/circuit_cat_white.png" alt="" class="logo d-inline-block align-top"
-                                      width="45" height="45"></a>
         <a class="navbar-brand" href="{{ SITEURL }}/">
             {{ SITENAME }}
         </a>
@@ -57,6 +55,7 @@
                 <li {% if page_name=='archives' %} class="active"{% endif %}>
                     <a class="nav-link" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Archives</a>
                 </li>
+                {% if SOCIAL %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
@@ -68,9 +67,8 @@
                         {% endfor %}
                     </ul>
                 </li>
+                {% endif %}
             </ul>
-            <iframe src="https://github.com/sponsors/kattni/button" title="Sponsor kattni" height="35" width="116"
-                    style="border: 0; margin-top:5px;"></iframe>
             <div class="dropdown">
                 <form class="d-flex" action="{{ SITE_URL }}/search">
                     <input name="q" class="form-control rounded-pill mx-2" id="search_input" type="search"

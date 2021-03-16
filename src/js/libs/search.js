@@ -5,23 +5,27 @@ import lunr from "lunr";
 import querystring from "query-string";
 
 // Build index
-let lunrIndex = lunr(function () {
-  this.field("title");
-  this.field("summary");
-  this.field("tags");
-  this.ref('ref');
-  documents.forEach(function (doc) {
-    let idx = {
-      title: doc.title,
-      summary: doc.summary,
-      tags: doc.tags.map(function (tag) {
-        return tag.n
-      }),
-      ref: doc.ref
-    }
-    this.add(idx);
-  }, this);
-});
+// let lunrIndex = lunr(function () {
+//   this.field("title");
+//   this.field("summary");
+//   this.field("tags");
+//   this.ref('ref');
+//   documents.forEach(function (doc) {
+//     let idx = {
+//       title: doc.title,
+//       summary: doc.summary,
+//       tags: doc.tags.map(function (tag) {
+//         return tag.n
+//       }),
+//       ref: doc.ref
+//     }
+//     this.add(idx);
+//   }, this);
+// });
+
+// Load Index
+
+let lunrIndex = lunr.Index.load(lunrSerializedIdx);
 
 
 function searchIndex(value, limit = 10) {
@@ -37,7 +41,7 @@ function searchIndex(value, limit = 10) {
     if (limit > 0 && n > limit) {
       break;
     }
-    results.push(documents[parseInt(hit.ref)])
+    results.push(lunrDocuments[parseInt(hit.ref)])
   }
   return results;
 }

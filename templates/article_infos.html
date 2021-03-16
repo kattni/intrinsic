@@ -1,7 +1,7 @@
 <div class="post-info">
     <span>Posted</span>
     {% if article.author and DISPLAY_AUTHOR_ON_POSTINFO %}
-        <span>by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{ article.author }}</a></span>
+        <span>by <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></span>
     {% endif %}
     <span>on</span>
     <span>{{ article.date.strftime("%A %Y %B %d %H:%M") }}</span>

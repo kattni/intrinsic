@@ -117,10 +117,15 @@ footer {
 .navbar-brand {
   font-family: "Courier New", monospace;
   font-size: 1.7rem;
+  color: $navbar-brand-color !important;
 }
 
 .navbar-nav.mb-2.mb-lg-0 .active a.nav-link {
   color: $navbar-link-color;
+}
+
+.dropdown-menu {
+  background-color: $dropdown-background-color;
 }
 
 .dropdown-menu > li > a:hover,
@@ -229,10 +234,10 @@ ul.list-articles-under-tag-name {
 
 .post-info {
   font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: var(--mutedTextColor);
+  color: $post-info-color;
   font-size: 0.8rem;
   a {
-    color: $post-info-color;
+    color: $post-info-link-color;
     &:hover {
       border-bottom: 1px dotted $hover-dots-color;
     }
@@ -417,6 +422,7 @@ table.code-highlighttable {
 /* Archives */
 .archive-article-list {
   .list-group-item {
+    background-color: $content-bg-color;
     border-bottom: 1px dotted $archive-item-dots-color;
     border-top: none;
     border-left: none;
