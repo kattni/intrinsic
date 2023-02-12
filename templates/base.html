@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if MASTODON_LINK %}
+        <link rel="me" href="{{ MASTODON_LINK }}">
+    {% endif %}
     {% block head_links %}
         {% if 'pelican-webassets' in PLUGINS and not DEV_CSS %}
             {% include 'minify_css.html' with context %}
@@ -14,9 +17,6 @@
             <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/custom.css" media="screen">
         {% endif %}
     {% endblock head_links %}
-    {% if MASTODON_LINK %}
-        <link rel="me" href="{{ MASTODON_LINK }}">
-    {% endif %}
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
