@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const webpack = require('webpack-stream');
 const named = require('vinyl-named');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const path = require('path');
 
 const sourceDir = './src';
@@ -12,15 +12,14 @@ const cssPaths = [path.join(sourceDir, cssDir, '**/*.scss')]
 const destDir = 'static';
 
 gulp.task('scripts', function () {
-  return gulp.src(jsPaths, {ignore: [path.join(sourceDir, jsDir, 'libs/**'),
-    path.join(sourceDir, jsDir, 'search-page.js')]})
+  return gulp.src(jsPaths, {ignore: path.join(sourceDir, jsDir, 'libs/**') + ',' + path.join(sourceDir, jsDir, 'search-page.js')})
     .pipe(named())
     .pipe(webpack({
       mode: 'production',
-      devtool: "sourcemap",
+      devtool: "source-map",
       externals: {
         jquery: 'jQuery',
-        bootstrap: 'bootstrap',
+        bootstrap: 'bootstrap'
       }
     }))
     .pipe(gulp.dest(path.join(destDir, jsDir)));
