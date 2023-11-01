@@ -1,3 +1,14 @@
+/* Fonts */
+@font-face {
+  font-family: "JetBrainsMono-Light";
+  src: url("JetBrainsMono-Light.woff2");
+}
+
+@font-face {
+  font-family: "Barlow-Light";
+  src: url("Barlow-Light.woff2");
+}
+
 /* Bootstrap Override */
 .col-md-auto {
     min-width: 100%;
@@ -11,31 +22,31 @@ h5,
 h6 {
     font-weight: normal;
     margin: 10px 0;
-    font-family: Palatino, URW Palladio L, serif;
+    font-family: "JetBrainsMono-Light", "Andale Mono", monospace;
 }
 
 h1 a {
-    color: #380070;
+    color: #533979;
     text-decoration: none;
 }
 
 h1#recent-posts,
 #search-content h2 {
-    border-bottom: 1px solid #380070;
-    color: #380070;
+    border-bottom: 1px solid #533979;
+    color: #533979;
 }
 
 .bg-dark {
-    background-color: #29004d !important;
+    background-color: #533979 !important;
 }
 
 a {
     text-decoration: none;
-    color: #6a00cb;
+    color: #533979;
 }
 
 a:hover {
-    color: #a04cff;
+    color: #8B7CBA;
 }
 
 #search-results.dropdown-menu.show {
@@ -54,7 +65,7 @@ a:hover {
 /* Base */
 :root {
     --borderRadius: 4px;
-    --mutedTextColor: dimgray;
+    --mutedTextColor: #8B7CBA;
 }
 
 html,
@@ -65,12 +76,13 @@ body {
 body {
     display: flex;
     flex-direction: column;
-    background-color: #fbf7ff;
+    background-color: #E3DEEF;
+    color: #2F134B;
 }
 
 footer {
-    background-color: #29004d;
-    color: #E0E0E0;
+    background-color: #533979;
+    color: #8B7CBA;
     align-items: center;
     display: flex;
     margin: 15px 0 0 0;
@@ -80,15 +92,16 @@ footer {
 
 footer #footer-info {
     margin-left: auto;
+    font-family: "Barlow-Light", "Gill Sans", sans-serif;
 }
 
-footer h4 {
-    font-family: Optima, sans-serif;
+footer {
+    font-family: "Barlow-Light", "Gill Sans", sans-serif;
     padding-right: 10px;
 }
 
 footer a {
-    color: #d4a8ff;
+    color: #E3DEEF;
 }
 
 footer a:hover {
@@ -98,26 +111,25 @@ footer a:hover {
 /* Navbar */
 .navbar { /* Fix for certain browsers. */
     display: block;
+    max-height: 128px;
+    font-family: "Barlow-Light", "Gill Sans", sans-serif;
 }
 
-.navbar .logo {
-    margin: 5px 20px 5px 5px;
+.logo {
+    max-height: 118px;
 }
 
-.navbar .subtitle {
-    font-size: 1rem;
-    font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
-    color: white;
-    padding-top: 5px;
+.logo-size {
+    max-width: 80%;
 }
 
-.navbar-brand {
-    font-family: "Courier New", monospace;
-    font-size: 1.7rem;
+
+img.logo {
+    max-width: 95%;
 }
 
-.navbar-nav.mb-2.mb-lg-0 .active a.nav-link {
-    color: #E0E0E0;
+#navbarSupportedContent {
+  padding-top: 60px;
 }
 
 .dropdown-menu > li > a:hover,
@@ -127,11 +139,11 @@ footer a:hover {
     color: #ffffff;
     text-decoration: none;
     background-color: #380070;
-    background-image: -moz-linear-gradient(top, #380070, #5700ad);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#380070), to(#5700ad));
-    background-image: -webkit-linear-gradient(top, #380070, #5700ad);
-    background-image: -o-linear-gradient(top, #380070, #5700ad);
-    background-image: linear-gradient(to bottom, #380070, #5700ad);
+    background-image: -moz-linear-gradient(top, #533979, #8B7CBA);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#533979), to(#8B7CBA));
+    background-image: -webkit-linear-gradient(top, #533979, #8B7CBA);
+    background-image: -o-linear-gradient(top, #533979, #8B7CBA);
+    background-image: linear-gradient(to bottom, #533979, #8B7CBA);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
@@ -211,8 +223,8 @@ ul.list-articles-under-tag-name {
 
 /* Article */
 .page-header {
-    color: #380070;
-    border-bottom: 2px solid #380070;
+    color: #533979;
+    border-bottom: 2px solid #533979;
     font-family: Garamond, serif;
     margin: 10px 0 30px 0;
     width: 100%;
@@ -224,13 +236,13 @@ ul.list-articles-under-tag-name {
 }
 
 .post-info {
-    font-family: PT Sans, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: "Barlow-Light", "Gill Sans", sans-serif;
     color: var(--mutedTextColor);
     font-size: 0.8rem;
 }
 
 .post-info a {
-    color: #8956bf;
+    color: #533979;
 }
 
 .post-info a:hover,
@@ -242,7 +254,7 @@ ul.list-articles-under-tag-name {
     text-align: left;
     font-size: 1.05rem;
     max-width: 100%;
-    font-family: Optima, sans-serif;
+    font-family: "Barlow-Light", "Gill Sans", sans-serif;
 }
 
 .article-content p {
@@ -293,7 +305,7 @@ code {
 
 /* Recent Posts and Search Results */
 .recent-post-summary, .search-article-summary {
-    font-family: Optima, sans-serif;
+    font-family: "Barlow-Light", "Gill Sans", sans-serif;
 }
 
 ol#posts-list {
@@ -304,7 +316,8 @@ ol#posts-list {
 ol#posts-list .recent-post-summary {
     font-size: 1rem;
     padding-top: 6px;
-    border-bottom: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E3DEEF;
 }
 
 ol#posts-list .recent-post-summary p {
@@ -316,9 +329,7 @@ ol#posts-list .recent-post-summary p {
 }
 
 ol#posts-list header h4, .search-article-title h4 {
-    border-bottom: 1px dotted #bebebe;
-    font-weight: 600;
-    padding-top: 1rem;
+    border-bottom: 1px dotted #E3DEEF;
 }
 
 .read-more {
@@ -335,7 +346,7 @@ ol#posts-list header h4, .search-article-title h4 {
 }
 
 .recent-posts-article {
-    border-bottom: 1px dotted var(--mutedTextColor);
+    border-bottom: 1px dotted #E3DEEF;
     overflow: auto;
     padding: 0.3rem 0.2rem;
 }
@@ -353,7 +364,7 @@ ol#posts-list header h4, .search-article-title h4 {
 }
 
 .recent-posts-article a {
-    color: #380070;
+    color: #533979;
 }
 
 .recent-posts p {
@@ -364,7 +375,7 @@ ol#posts-list header h4, .search-article-title h4 {
 }
 
 .recent-posts-content, .search-content {
-    border-bottom: 2px solid #E0E0E0;
+    border-bottom: 2px solid #E3DEEF;
 }
 
 .recent-posts-content a {
