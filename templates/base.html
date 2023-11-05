@@ -27,8 +27,9 @@
 <nav class="navbar bg-light navbar-expand-lg" data-bs-theme="light">
     <div class="container-fluid">
         <div class="logo-size">
-            <a href="{{ SITEURL }}/"><img  class="logo" src="/extra/logo.png"
-                                           alt="Circat. kattni:decoded making things simple."></a>
+            <a href="{{ SITEURL }}/">
+                <img  class="logo" src="{{ LOGO_PATH }}" alt="{{ LOGO_ALT }}">
+            </a>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,8 +70,9 @@
                         {% endfor %}
                     </ul>
                 </li>
-                <iframe class="sponsor-button" src="https://github.com/sponsors/kattni/button" title="Sponsor kattni"
-                        height="40" width="125"></iframe>
+                {% if SPONSORSHIP %}
+                    {% include 'sponsorship_buttons.html' %}
+                {% endif %}
             </ul>
 {#            <div class="dropdown search-main">#}
 {#                <form class="d-flex" action="{{ SITE_URL }}/search">#}

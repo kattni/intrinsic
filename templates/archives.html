@@ -23,8 +23,10 @@
                         {% if loop.first %}
                             <div class="row">
                                 <div class="col">
+                                    <div class="archive-year">
                                     <h2 class="float-sm-none float-md-start float-lg-start me-md-3 px-3 px-md-0"
                                         id="{{ year }}"><a href="#{{ year }}">{{ year }}</a></h2>
+                                    </div>
                                     <ul class="list-group list-group-flush">
                                         {% else %}
                                         {% set prevyear = loop.previtem.date.strftime('%Y') %}
@@ -33,7 +35,9 @@
                                             </div>
                                             </div> <!-- end of year -->
                                             <div class="row"> <!-- next year -->
+                                            <div class="archive-year">
                                             <h2 id="{{ year }}"><a href="#{{ year }}">{{ year }}</a></h2>
+                                            </div>
                                             <ul class="list-group list-group-flush">
                                         {% endif %}
                         {% endif %}
