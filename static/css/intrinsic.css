@@ -194,11 +194,6 @@ a.nav-link:hover {
     margin-top: 3px;
 }
 
-.octicon-heart:hover {
-    transition: transform .15s cubic-bezier(0.2, 0, 0.13, 2);
-    transform: scale(1.5);
-}
-
 .octicon-heart {
     margin-top: 7px;
     height: 20px;
@@ -210,6 +205,11 @@ a.nav-link:hover {
     margin-right: 3px;
 }
 
+.octicon-heart:hover {
+    transition: transform .15s cubic-bezier(0.2, 0, 0.13, 2);
+    transform: scale(1.5);
+}
+
 .patreon-button {
     background-color: #E0DEEF;
     padding-top: 5px;
@@ -218,6 +218,8 @@ a.nav-link:hover {
     margin-top: 3px;
     width: 200px;
     text-align: center;
+    font-family: "Barlow-Regular", "Gill Sans", sans-serif;
+    color: #2F134B;
 }
 
 .patreon-logo {
@@ -227,11 +229,6 @@ a.nav-link:hover {
 .patreon-logo:hover {
     transition: transform .15s cubic-bezier(0.2, 0, 0.13, 2);
     transform: scale(1.3);
-}
-
-.patreon-button-link {
-    font-family: "Barlow-Regular", "Gill Sans", sans-serif;
-    color: #2F134B;
 }
 
 .search-main {
