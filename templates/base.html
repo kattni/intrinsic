@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if WEB_PREVIEW_IMAGE %}
+        <meta property="og:image" content="{{ SITEURL }}{{ WEB_PREVIEW_IMAGE }}" />
+    {% endif %}
     {% if MASTODON_LINK %}
         <link rel="me" href="{{ MASTODON_LINK }}">
     {% endif %}
@@ -23,6 +26,17 @@
     <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
 
 </head>
+{% if GOOGLE_ANALYTICS %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ GOOGLE_ANALYTICS }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ GOOGLE_ANALYTICS }}');
+    </script>
+{% endif %}
 <body>
 <nav class="navbar bg-light navbar-expand-lg" data-bs-theme="light">
     <div class="container-fluid">
